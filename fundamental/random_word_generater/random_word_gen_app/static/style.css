@@ -1,0 +1,35 @@
+h2{
+    margin:35px auto;
+    max-width: 400px;
+    border: 2px solid black;
+    padding: 20px;
+    
+}
+
+h4{
+    margin:35px auto 10px auto;
+    max-width: 700px;
+    border: 3px solid yellow;
+    padding: 20px;
+    text-align: center;
+} 
+div{
+
+    margin:35px auto;
+    max-width: 700px;
+    border: 3px solid black;
+    padding: 20px;
+    text-align: center;
+    background-color: yellow;
+    min-height: 600px;
+}
+h1{
+
+    margin:0 auto 20px auto;
+    max-width: 450px;
+    border: 3px solid black;
+    padding: 20px;
+    text-align: center;
+    background-color: yellow;
+    
+}
