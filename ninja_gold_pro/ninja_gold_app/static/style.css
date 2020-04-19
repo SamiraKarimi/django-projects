@@ -1,0 +1,39 @@
+
+
+#contain{
+margin:20px auto;
+/* border: 1px solid orange; */
+padding: 40px 100px;
+}
+form {
+display: inline-block;
+width: 18%;
+min-height:200px;
+border:2px solid orange;
+text-align: center;
+margin:20px 40px;
+padding: 25px 0px;
+}
+input[type='text']{
+    color:orange;
+    border: solid 1px orange;
+}
+p{
+    text-align:center;
+}
+#activities {
+    min-width:800px;
+    height: 250px;
+    border: solid 1px orange;
+    margin:5px;
+    padding: 7px;
+    overflow: scroll;
+
+}
+a{
+    margin:0px 0px 0px 630px;
+    
+} 
+#activities p{
+    text-align: left;
+}

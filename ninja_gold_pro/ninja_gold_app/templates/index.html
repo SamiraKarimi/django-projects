@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}"> 
+    <title>Document</title>
+</head>
+<body>
+    <div id="contain">
+    <p>Your Gold: {{request.session.total_gold}}</p>
+    <form  action="/process_money" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="location" value="farm">
+        <div>
+            <h3>Farm</h3>
+            <p>earns 10-20 golds</p>
+            <input type="submit" value="Find Gold!" class="btn btn-warning">
+        </div>
+        
+    </form>
+    <form action="/process_money" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="location" value="cave">
+
+        <div>
+            <h3>cave</h3>
+            <p>earns 5-10 golds</p>
+            <input type="submit" value="Find Gold!" class="btn btn-warning">
+        </div>
+        
+    </form>
+    <form action="/process_money" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="location" value="house">
+        <div>
+            <h3>house</h3>
+            <p>earns 2-5 golds</p>
+            <input type="submit" value="Find Gold!" class="btn btn-warning">
+        </div>
+        
+    </form>
+    <form action="/process_money" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="location" value="casino">
+
+        <div>
+            <h3>casino</h3>
+            <p>earns/takes 0-50 golds</p>
+            <input type="submit" value="Find Gold!" class="btn btn-warning">
+        </div>
+        
+    </form>
+    <p>activities:</p>
+    <div id='activities'>
+        {% for activity in  request.session.activities %}
+            {% if "earned" in activity %}
+                <p style="color:green">{{activity}}</p>
+            {% else %}
+            <p style="color:red">{{activity}}</p>
+            {% endif %}
+        {% endfor %}       
+    </div>
+    <a href="/reset"><button type="button" class="btn btn-info">Reset</button></a>
+    
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
